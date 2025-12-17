@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
 
     public Rigidbody2D rBody2D;
     private SpriteRenderer renderer;
+    private GroundSensor sensor;
 
     public float jumpForce = 10;
 
@@ -21,7 +22,8 @@ public class PlayerControl : MonoBehaviour
     {
         rBody2D = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
- 
+        sensor = GetComponentInChildren<GroundSensor>();
+
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
     }
@@ -61,7 +63,7 @@ public class PlayerControl : MonoBehaviour
         }
     
     //cómo saltar pulsando un botón.
-        if(jumpAction.WasPressedThisFrame())
+        if(jumpAction.WasPressedThisFrame() && sensor.isGrounded)
         {
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
