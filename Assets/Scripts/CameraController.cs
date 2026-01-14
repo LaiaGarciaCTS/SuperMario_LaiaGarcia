@@ -27,6 +27,8 @@ public class CameraController : MonoBehaviour
         //transform.position = cameraTarget.position + cameraOffset;
         //transform.position = new Vector3(cameraTarget.position.x, 0, 0) + cameraOffset;
 
+    if(cameraTarget !=null)
+    {
         Vector3 desiredPosition = cameraTarget.position + cameraOffset;
 
         float clampX = Mathf.Clamp(desiredPosition.x, minCameraPosition.x, maxCameraPosition.x);
@@ -36,4 +38,5 @@ public class CameraController : MonoBehaviour
 
         transform.position = clampedPosition;
     }
+}
 }

@@ -16,6 +16,10 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer renderer;
     private GroundSensor sensor;
 
+
+    private Animator animator;
+
+
     public float jumpForce = 10;
 
     void Awake()
@@ -23,6 +27,7 @@ public class PlayerControl : MonoBehaviour
         rBody2D = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
         sensor = GetComponentInChildren<GroundSensor>();
+        animator = GetComponent<Animator>();
 
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
@@ -51,15 +56,20 @@ public class PlayerControl : MonoBehaviour
         //transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + moveDirection.x, transform.position.y), movementSpeed * Time.deltaTime);
 
 
-    //Cómo hacer flip al moverse.
+    //Cómo hacer flip al moverse y hacer la animación de correr
         if(moveDirection.x > 0)
         {
             renderer.flipX = false;
+            animator.SetBool("IsRunning", true);
         }
-
         else if(moveDirection.x < 0)
         {
             renderer.flipX = true;
+            animator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
         }
     
     //cómo saltar pulsando un botón.
@@ -67,6 +77,8 @@ public class PlayerControl : MonoBehaviour
         {
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        animator.SetBool("IsJumping", !sensor.isGrounded);
        
     //cómo eliminar la fracción.
        void FixedUpdate()
