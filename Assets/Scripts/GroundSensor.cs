@@ -21,7 +21,12 @@ public class GroundSensor : MonoBehaviour
 
         if(collision.gameObject.layer == 7)
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+
+            Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
+            _enemyScript.GoombaDeath();
+
+            //_playerScript.Bounce();
         }
     }
 

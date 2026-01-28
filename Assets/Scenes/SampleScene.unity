@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 36185552}
   - component: {fileID: 36185551}
   - component: {fileID: 36185550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 52320082}
   - component: {fileID: 52320081}
   - component: {fileID: 52320080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8822,6 +8822,51 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &236634870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236634872}
+  - component: {fileID: 236634871}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &236634871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236634870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0a6c5d1dbc62a44bde4b0dcedb2d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killedEnemies: 0
+--- !u!4 &236634872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236634870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.881495, y: 3.7886734, z: -0.027512955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240623525
 GameObject:
   m_ObjectHideFlags: 0
@@ -10672,7 +10717,7 @@ GameObject:
   - component: {fileID: 298216687}
   - component: {fileID: 298216686}
   - component: {fileID: 298216685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16957,7 +17002,7 @@ GameObject:
   - component: {fileID: 516995904}
   - component: {fileID: 516995906}
   - component: {fileID: 516995905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0
   m_TagString: Tuberias
   m_Icon: {fileID: 0}
@@ -18654,9 +18699,9 @@ GameObject:
   - component: {fileID: 573458277}
   - component: {fileID: 573458279}
   - component: {fileID: 573458278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0 (3)
-  m_TagString: Untagged
+  m_TagString: Tuberias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19640,9 +19685,9 @@ GameObject:
   - component: {fileID: 609070870}
   - component: {fileID: 609070872}
   - component: {fileID: 609070871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0 (3)
-  m_TagString: Untagged
+  m_TagString: Tuberias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26713,7 +26758,7 @@ GameObject:
   - component: {fileID: 844511235}
   - component: {fileID: 844511234}
   - component: {fileID: 844511233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31352,87 +31397,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &966041142
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 850756003386504407, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_Name
-      value: Goomba enfadao
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577768334810057670, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_Color.b
-      value: 0.3820755
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577768334810057670, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3820755
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577768334810057670, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.0341
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.0341
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.0341
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 52.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43607215b60296a45aae7538150124db, type: 3}
 --- !u!1 &968373186
 GameObject:
   m_ObjectHideFlags: 0
@@ -31560,7 +31524,7 @@ GameObject:
   - component: {fileID: 980553594}
   - component: {fileID: 980553593}
   - component: {fileID: 980553592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33675,7 +33639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e468427e73efef4aa0986acc6e5e636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: []
+  enemyPrefab:
+  - {fileID: 850756003386504407, guid: 43607215b60296a45aae7538150124db, type: 3}
+  - {fileID: 3789701801924133211, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
   spawnPosition: {fileID: 1166262258}
   spawnPosition2: {fileID: 25665693}
   spawnPoints: []
@@ -35820,7 +35786,7 @@ GameObject:
   - component: {fileID: 1134184699}
   - component: {fileID: 1134184698}
   - component: {fileID: 1134184697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35982,7 +35948,7 @@ GameObject:
   - component: {fileID: 1135932044}
   - component: {fileID: 1135932043}
   - component: {fileID: 1135932042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37330,9 +37296,9 @@ GameObject:
   - component: {fileID: 1180337385}
   - component: {fileID: 1180337387}
   - component: {fileID: 1180337386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0 (2)
-  m_TagString: Untagged
+  m_TagString: Tuberias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37952,7 +37918,7 @@ GameObject:
   - component: {fileID: 1203184304}
   - component: {fileID: 1203184303}
   - component: {fileID: 1203184302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38276,7 +38242,7 @@ GameObject:
   - component: {fileID: 1207702411}
   - component: {fileID: 1207702410}
   - component: {fileID: 1207702409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38552,7 +38518,7 @@ GameObject:
   - component: {fileID: 1211792826}
   - component: {fileID: 1211792828}
   - component: {fileID: 1211792827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41566,7 +41532,7 @@ GameObject:
   - component: {fileID: 1286383881}
   - component: {fileID: 1286383883}
   - component: {fileID: 1286383882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43063,7 +43029,7 @@ GameObject:
   - component: {fileID: 1323882062}
   - component: {fileID: 1323882064}
   - component: {fileID: 1323882063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44129,7 +44095,7 @@ GameObject:
   - component: {fileID: 1349588243}
   - component: {fileID: 1349588242}
   - component: {fileID: 1349588241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46627,7 +46593,7 @@ GameObject:
   - component: {fileID: 1412372028}
   - component: {fileID: 1412372027}
   - component: {fileID: 1412372026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48842,7 +48808,7 @@ GameObject:
   - component: {fileID: 1470332326}
   - component: {fileID: 1470332328}
   - component: {fileID: 1470332327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0 (1)
   m_TagString: Tuberias
   m_Icon: {fileID: 0}
@@ -52747,6 +52713,206 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1567623902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567623908}
+  - component: {fileID: 1567623906}
+  - component: {fileID: 1567623907}
+  - component: {fileID: 1567623905}
+  - component: {fileID: 1567623904}
+  - component: {fileID: 1567623903}
+  m_Layer: 0
+  m_Name: Monedas
+  m_TagString: Moneda
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1567623903
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.00926888}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.875}
+    newSize: {x: 0.5, y: 0.875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.5926895, y: 0.9862273}
+  m_EdgeRadius: 0
+--- !u!50 &1567623904
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1567623905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef07448f98e4c8b4f8ce92f8f37d04e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monedaAnimator: {fileID: 0}
+  rigidbodyMoneda: {fileID: 0}
+--- !u!95 &1567623906
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91351cb876b273e4db6c323d3110b20a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1567623907
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -192747638961780876, guid: 1a171f186b3f4b441a5505862f66340c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.5, y: 0.875}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1567623908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567623902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.088566, y: 2.5946398, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567789218
 GameObject:
   m_ObjectHideFlags: 0
@@ -55645,7 +55811,7 @@ GameObject:
   - component: {fileID: 1651053649}
   - component: {fileID: 1651053651}
   - component: {fileID: 1651053650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63594,9 +63760,9 @@ GameObject:
   - component: {fileID: 1853292822}
   - component: {fileID: 1853292824}
   - component: {fileID: 1853292823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tuberias_0 (2)
-  m_TagString: Untagged
+  m_TagString: Tuberias
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65737,7 +65903,7 @@ GameObject:
   - component: {fileID: 1920075408}
   - component: {fileID: 1920075407}
   - component: {fileID: 1920075406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66791,7 +66957,7 @@ GameObject:
   - component: {fileID: 1948207975}
   - component: {fileID: 1948207974}
   - component: {fileID: 1948207973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladrillos_13 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75610,6 +75776,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &1649881366898571164
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3789701801924133211, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_Name
+      value: Goomba enfadao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 52.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571865090643972663, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a9a4475189ee9d40b98b2546e1151d5, type: 3}
 --- !u!1001 &7722613605466956210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75687,4 +75910,6 @@ SceneRoots:
   - {fileID: 1050896941}
   - {fileID: 7722613605466956210}
   - {fileID: 903365503}
-  - {fileID: 966041142}
+  - {fileID: 1649881366898571164}
+  - {fileID: 1567623908}
+  - {fileID: 236634872}

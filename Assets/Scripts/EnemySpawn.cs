@@ -26,7 +26,7 @@ void Awake()
     {
         foreach (Transform item in spawnPoints)
             {
-                Instantiate(enemyPrefab[Random.Range(0, 2)], item.position, Quaternion.identity);
+                Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], item.position, Quaternion.identity);
             }
             yield return new WaitForSeconds(0.5f);
     }
