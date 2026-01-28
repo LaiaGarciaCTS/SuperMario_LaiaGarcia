@@ -11,6 +11,8 @@ public class PrimerScript : MonoBehaviour
     //variable para almacenar letras
     private char letra = 'a';
 
+    public int[] intArray = new int [5] {2, 9, 5, 4, 3};
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
