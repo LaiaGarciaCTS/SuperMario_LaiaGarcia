@@ -19,13 +19,10 @@ public class BGMManager : MonoBehaviour
         StartBGM();
     }
 
-    void Update()
-    {
-        
-    }
 
     void StartBGM()
     {
+        _audioSource.loop = true;
         _audioSource.clip = gameMusic;
         _audioSource.Play();
 

@@ -19,8 +19,6 @@ public class Goomba : MonoBehaviour
     public AudioClip deathSFX;
 
 
-
-
     void Awake()
     {
         goombaAnimator = GetComponent<Animator>();
@@ -28,7 +26,7 @@ public class Goomba : MonoBehaviour
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _audioSource = GetComponent<AudioSource>();
         _boxCollider = GetComponent<BoxCollider2D>();
-        _gameManager = GetComponent<GameManager>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -72,7 +70,14 @@ public class Goomba : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+        {
+            direction = direction * -1;
+        }
 
 
     public void GoombaDeath()
@@ -93,5 +98,6 @@ public class Goomba : MonoBehaviour
 
     //_audioSource.clip = deathSFX
     //_audioSource.Play();
-}
+    }
+    
 }

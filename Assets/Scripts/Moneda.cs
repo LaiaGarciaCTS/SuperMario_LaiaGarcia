@@ -9,25 +9,25 @@ public class Moneda : MonoBehaviour
     public Rigidbody2D rigidbodyMoneda;
 
 
-
+    private AudioSource _audioSourceMoneda;
+    public AudioClip monedaSonido;
 
     void Awake()
     {
         monedaAnimator = GetComponent<Animator>();
 
         rigidbodyMoneda = GetComponent<Rigidbody2D>();
+
+        _audioSourceMoneda = GetComponent<AudioSource>();
     }
-
-
-
-//contador de monedas + que desaparezca cuando mario colisione con la moneda
-    public Collision2D monedaCollision;
 
     void OnCollisionEnter2D(Collision2D monedaCollision)
     {
         if (monedaCollision.gameObject.CompareTag("Player"))
         {
-           Destroy(gameObject);
+            _audioSourceMoneda.PlayOneShot(monedaSonido);
+           Destroy(gameObject, 0.5f);
+           
         }
     }
 

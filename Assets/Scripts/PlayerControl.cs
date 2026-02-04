@@ -20,6 +20,10 @@ public class PlayerControl : MonoBehaviour
     private Animator animator;
 
 
+    private AudioSource _audioSourceSalto;
+    public AudioClip saltoSonido;
+
+
     public float jumpForce = 10;
 
     void Awake()
@@ -28,6 +32,8 @@ public class PlayerControl : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponent<Animator>();
+
+        _audioSourceSalto = GetComponent<AudioSource>();
 
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
@@ -76,6 +82,7 @@ public class PlayerControl : MonoBehaviour
         if(jumpAction.WasPressedThisFrame() && sensor.isGrounded)
         {
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            _audioSourceSalto.PlayOneShot(saltoSonido);
         }
 
         animator.SetBool("IsJumping", !sensor.isGrounded);
@@ -86,4 +93,5 @@ public class PlayerControl : MonoBehaviour
             rBody2D.linearVelocity = new Vector2(moveDirection.x * movementSpeed, rBody2D.linearVelocity.y);
        }
     }
+    
 }
