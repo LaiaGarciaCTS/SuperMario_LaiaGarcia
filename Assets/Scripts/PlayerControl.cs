@@ -10,7 +10,10 @@ public class PlayerControl : MonoBehaviour
     private InputAction moveAction;
     private Vector2 moveDirection;
     private InputAction jumpAction;
-    private _InputAction _pauseAction;
+    private InputAction _pauseAction;
+    public float bounceForce = 4;
+    private GameManager _gameManager;
+
 
 
     public Rigidbody2D rBody2D;
@@ -33,7 +36,7 @@ public class PlayerControl : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponent<Animator>();
-        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         _audioSourceSalto = GetComponent<AudioSource>();
 
@@ -58,7 +61,7 @@ public class PlayerControl : MonoBehaviour
             _gameManager.Pause();
         }
 
-        if(_gameManager._pause == true);
+        if(_gameManager._pause == true)
         {
             return;
         }
@@ -97,7 +100,7 @@ public class PlayerControl : MonoBehaviour
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             _audioSourceSalto.PlayOneShot(saltoSonido);
         }
-            (field) InputAction PlayerController
+        
         
 
         animator.SetBool("IsJumping", !sensor.isGrounded);
@@ -109,4 +112,10 @@ public class PlayerControl : MonoBehaviour
        {
             rBody2D.linearVelocity = new Vector2(moveDirection.x * movementSpeed, rBody2D.linearVelocity.y);
        }
+
+    public void Bounce()
+    {
+        rBody2D.linearVelocity = new Vector2(rBody2D.linearVelocity.x,0);
+        rBody2D.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
+    }
 }

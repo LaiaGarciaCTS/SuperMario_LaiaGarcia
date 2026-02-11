@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public Text goombaText;
 
-    public bool _pause;
+    public bool _pause = false;
 
     public int killedEnemies = 0;
+
+    public GameObject pauseCanvas;
 
     public void AddKill()
     {
@@ -17,19 +19,20 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void Pause()
+    public void Pause()
     {
         if (_pause == false)
         {
             Time.timeScale = 0;
             _pause = true;
         }
-        
-        else (_pause == true)
+        else
         {
             Time.timeScale = 1;
             _pause = false;
         }
+
+        pauseCanvas.SetActive(_pause);
         
     }
 }

@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
+
+    PlayerControl _playerScript;
+
+    void Awake()
+    {
+        _playerScript = GetComponentInParent<PlayerControl>();
+    }
+
+
     public bool isGrounded;
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -9,6 +18,16 @@ public class GroundSensor : MonoBehaviour
         if(collision.gameObject.layer == 6)
         {
             isGrounded = true;
+        }
+
+        if(collision.gameObject.layer == 7)
+        {
+            //Destroy(collision.gameObject);
+            _playerScript.Bounce();
+            Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
+            _enemyScript.TakeDamage();
+
+            
         }
     }
 
@@ -19,15 +38,7 @@ public class GroundSensor : MonoBehaviour
             isGrounded = true;
         }
 
-        if(collision.gameObject.layer == 7)
-        {
-            //Destroy(collision.gameObject);
-
-            Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
-            _enemyScript.TakeDamage();
-
-            //_playerScript.Bounce();
-        }
+        
     }
 
     void OnTriggerExit2D(Collider2D collision)

@@ -21,7 +21,7 @@ public class Moneda : MonoBehaviour
         _audioSourceMoneda = GetComponent<AudioSource>();
     }
 
-    void OnCollisionEnter2D(Collision2D monedaCollision)
+    void OnTriggerEnter2D(Collider2D monedaCollision)
     {
         if (monedaCollision.gameObject.CompareTag("Player"))
         {

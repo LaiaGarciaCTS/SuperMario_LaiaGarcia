@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goomba : MonoBehaviour
 
@@ -15,6 +16,9 @@ public class Goomba : MonoBehaviour
     private AudioSource _audioSource;
     private BoxCollider2D _boxCollider;
     private GameManager _gameManager;
+    private int _goombaHealth = 3;
+    private Slider _healthSlider;
+
 
     public AudioClip deathSFX;
 
@@ -27,6 +31,7 @@ public class Goomba : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _healthSlider = GetComponentInChildren<Slider>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
