@@ -32,7 +32,8 @@ public class Goomba : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _healthSlider.maxValue = _goombaHealth;
+        _healthSlider.value = _goombaHealth;
     }
 
     // Update is called once per frame
@@ -80,6 +81,18 @@ public class Goomba : MonoBehaviour
         }
 
 
+    public void TakeDamage()
+    {
+        _goombaHealth--;
+        _healthSlider.value = _goombaHealth;
+
+        if(_goombaHealth <= 0)
+        {
+            GoombaDeath();
+        }
+    }
+
+
     public void GoombaDeath()
     {
         _boxCollider.enabled = false;
@@ -98,6 +111,8 @@ public class Goomba : MonoBehaviour
 
     //_audioSource.clip = deathSFX
     //_audioSource.Play();
+
+    
     }
     
 }

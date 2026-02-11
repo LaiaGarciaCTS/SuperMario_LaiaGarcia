@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     private InputAction moveAction;
     private Vector2 moveDirection;
     private InputAction jumpAction;
+    private _InputAction _pauseAction;
 
 
     public Rigidbody2D rBody2D;
@@ -32,11 +33,13 @@ public class PlayerControl : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponent<Animator>();
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         _audioSourceSalto = GetComponent<AudioSource>();
 
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
+        _pauseAction = InputSystem.actions["Pause"];
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +53,16 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(_pauseAction.WasPressedThisFrame())
+        {
+            _gameManager.Pause();
+        }
+
+        if(_gameManager._pause == true);
+        {
+            return;
+        }
+
         moveDirection = moveAction.ReadValue<Vector2>();
         
         transform.position = new Vector3(transform.position.x + moveDirection.x * movementSpeed * Time.deltaTime, transform.position.y, transform.position.z);
@@ -84,14 +97,16 @@ public class PlayerControl : MonoBehaviour
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             _audioSourceSalto.PlayOneShot(saltoSonido);
         }
+            (field) InputAction PlayerController
+        
 
         animator.SetBool("IsJumping", !sensor.isGrounded);
        
-    //cómo eliminar la fracción.
-       void FixedUpdate()
+    //cómo eliminar la fricción.
+       
+    }
+    void FixedUpdate()
        {
             rBody2D.linearVelocity = new Vector2(moveDirection.x * movementSpeed, rBody2D.linearVelocity.y);
        }
-    }
-    
 }
