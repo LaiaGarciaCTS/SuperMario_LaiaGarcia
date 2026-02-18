@@ -12,6 +12,19 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseCanvas;
 
+    public SceneLoader _sceneLoader;
+    public string gameOverScene;
+
+    void Awake()
+    {
+        _sceneLoader = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
+    }
+
+    public void GameOver()
+    {
+        _sceneLoader.ChangeScene(gameOverScene);
+    }
+
     public void AddKill()
     {
         killedEnemies++;
@@ -33,6 +46,8 @@ public class GameManager : MonoBehaviour
         }
 
         pauseCanvas.SetActive(_pause);
-        
     }
+
+
+
 }

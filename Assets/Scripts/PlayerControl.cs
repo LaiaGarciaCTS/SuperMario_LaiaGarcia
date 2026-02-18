@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     private InputAction _pauseAction;
     public float bounceForce = 4;
     private GameManager _gameManager;
+    private BGMManager _bgmManagerScript;
 
 
 
@@ -28,6 +29,9 @@ public class PlayerControl : MonoBehaviour
     public AudioClip saltoSonido;
 
 
+    public AudioClip win;
+    
+
     public float jumpForce = 10;
 
     void Awake()
@@ -39,6 +43,8 @@ public class PlayerControl : MonoBehaviour
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         _audioSourceSalto = GetComponent<AudioSource>();
+
+        _bgmManagerScript = GameObject.Find ("BGM Manager").GetComponent<BGMManager>();
 
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
@@ -118,4 +124,27 @@ public class PlayerControl : MonoBehaviour
         rBody2D.linearVelocity = new Vector2(rBody2D.linearVelocity.x,0);
         rBody2D.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Win")
+        {
+            _bgmManagerScript.Win();
+            _audioSourceSalto.PlayOneShot(win);
+        }
+    }
+
+    public void MarioDeath()
+    {
+        _boxCollider.enable = false;
+        _bgmManagerScript.StopBGM();
+        animator.SetBool("IsDeatgh", true);
+        _audioSourceSalto.PlayOneShoot(deathSFXMario);
+
+        Destroy(gameObject, 2f);
+        if()
+        _gameManager.GameOver();
+    }
+
+    
 }

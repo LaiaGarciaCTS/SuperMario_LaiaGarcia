@@ -98,21 +98,22 @@ public class Goomba : MonoBehaviour
     }
 
 
-    public void GoombaDeath()
-    {
-        _boxCollider.enabled = false;
+    *//public void GoombaDeath()
+    //{
+        //_boxCollider.enabled = false;
         
-        goombaAnimator.SetBool("Goomba death", true);
+        //goombaAnimator.SetBool("Goomba death", true);
 
-        _gameManager.AddKill();
+        //_gameManager.AddKill();
 
-        _audioSource.PlayOneShot(deathSFX);
+        //_audioSource.PlayOneShot(deathSFX);
 
-        movementSpeed = 0;
+        //movementSpeed = 0;
 
         
 
-        Destroy(gameObject, 1.2f);
+        //Destroy(gameObject, 1.2f);
+    //_gameManager.GameOver();
 
     //_audioSource.clip = deathSFX
     //_audioSource.Play();
@@ -120,4 +121,4 @@ public class Goomba : MonoBehaviour
     
     }
     
-}
+//}

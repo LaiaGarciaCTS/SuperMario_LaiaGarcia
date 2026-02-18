@@ -8903,6 +8903,7 @@ MonoBehaviour:
   bounceForce: 10
   rBody2D: {fileID: 228533014}
   saltoSonido: {fileID: 8300000, guid: fd5c68504f34f99439bbf5c0152799fb, type: 3}
+  win: {fileID: 8300000, guid: 9d4a5ad7ed2b38a43a6607df50fd4108, type: 3}
   jumpForce: 10
 --- !u!95 &228533017
 Animator:
@@ -31487,7 +31488,7 @@ GameObject:
   - component: {fileID: 954193398}
   m_Layer: 0
   m_Name: Banderas_0
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31564,7 +31565,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
