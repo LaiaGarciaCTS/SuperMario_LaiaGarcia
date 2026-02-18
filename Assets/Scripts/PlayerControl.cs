@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerControl : MonoBehaviour
+
 {
     public Vector3 startPosition;
     public float movementSpeed = 5;
@@ -14,25 +16,22 @@ public class PlayerControl : MonoBehaviour
     public float bounceForce = 4;
     private GameManager _gameManager;
     private BGMManager _bgmManagerScript;
-
-
+    private BoxCollider2D _boxCollider; 
+    private AudioClip deathSFXMario;
 
     public Rigidbody2D rBody2D;
     private SpriteRenderer renderer;
     private GroundSensor sensor;
 
-
     private Animator animator;
-
 
     private AudioSource _audioSourceSalto;
     public AudioClip saltoSonido;
 
-
     public AudioClip win;
     
-
     public float jumpForce = 10;
+
 
     void Awake()
     {
@@ -41,8 +40,10 @@ public class PlayerControl : MonoBehaviour
         sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponent<Animator>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _boxCollider = GetComponent<BoxCollider2D>();
 
         _audioSourceSalto = GetComponent<AudioSource>();
+        deathSFXMario = GetComponent<AudioClip>();
 
         _bgmManagerScript = GameObject.Find ("BGM Manager").GetComponent<BGMManager>();
 
@@ -134,15 +135,16 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void MarioDeath()
+    public IEnumerator MarioDeath()
     {
-        _boxCollider.enable = false;
+        _boxCollider.enabled = false;
         _bgmManagerScript.StopBGM();
-        animator.SetBool("IsDeatgh", true);
-        _audioSourceSalto.PlayOneShoot(deathSFXMario);
+        animator.SetBool("IsDeath", true);
+        _audioSourceSalto.PlayOneShot(deathSFXMario);
+        yield return new WaitForSeconds(2f);
 
-        Destroy(gameObject, 2f);
-        if()
+        Destroy(gameObject);
+        
         _gameManager.GameOver();
     }
 

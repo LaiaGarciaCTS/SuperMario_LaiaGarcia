@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Goomba : MonoBehaviour
 
@@ -19,8 +20,10 @@ public class Goomba : MonoBehaviour
     private int _goombaHealth = 3;
     private Slider _healthSlider;
 
-
     public AudioClip deathSFX;
+
+    private PlayerControl _playerScript;
+
 
 
     void Awake()
@@ -32,6 +35,7 @@ public class Goomba : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _healthSlider = GetComponentInChildren<Slider>();
+        _playerScript = GameObject.Find("Mario_0").GetComponent<PlayerControl>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -74,7 +78,7 @@ public class Goomba : MonoBehaviour
         
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            StartCoroutine(_playerScript.MarioDeath());
         }
 
         
@@ -98,22 +102,22 @@ public class Goomba : MonoBehaviour
     }
 
 
-    *//public void GoombaDeath()
-    //{
-        //_boxCollider.enabled = false;
+    public void GoombaDeath()
+    {
+        _boxCollider.enabled = false;
         
-        //goombaAnimator.SetBool("Goomba death", true);
+        goombaAnimator.SetBool("Goomba death", true);
 
-        //_gameManager.AddKill();
+        _gameManager.AddKill();
 
-        //_audioSource.PlayOneShot(deathSFX);
+        _audioSource.PlayOneShot(deathSFX);
 
-        //movementSpeed = 0;
+        movementSpeed = 0;
 
         
 
-        //Destroy(gameObject, 1.2f);
-    //_gameManager.GameOver();
+        Destroy(gameObject, 1.2f);
+    _gameManager.GameOver();
 
     //_audioSource.clip = deathSFX
     //_audioSource.Play();
@@ -121,4 +125,4 @@ public class Goomba : MonoBehaviour
     
     }
     
-//}
+}

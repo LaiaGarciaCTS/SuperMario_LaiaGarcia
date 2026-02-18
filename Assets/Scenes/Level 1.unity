@@ -9057,6 +9057,8 @@ MonoBehaviour:
   _pause: 0
   killedEnemies: 0
   pauseCanvas: {fileID: 113867422}
+  _sceneLoader: {fileID: 2139456802}
+  gameOverScene: Game Over
 --- !u!4 &236634872
 Transform:
   m_ObjectHideFlags: 0
@@ -77831,6 +77833,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2139456801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2139456803}
+  - component: {fileID: 2139456802}
+  m_Layer: 0
+  m_Name: Scene Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2139456802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139456801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e699290c2e366c4a8782fbccc7e1145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2139456803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139456801}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 552.5963, y: 261.61047, z: -1.4556248}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649881366898571164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77994,3 +78040,4 @@ SceneRoots:
   - {fileID: 1897245307}
   - {fileID: 730805191}
   - {fileID: 113867426}
+  - {fileID: 2139456803}
