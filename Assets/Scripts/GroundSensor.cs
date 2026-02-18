@@ -5,9 +5,13 @@ public class GroundSensor : MonoBehaviour
 
     PlayerControl _playerScript;
 
+
+    public BoxCollider2D deathZone;
+
     void Awake()
     {
         _playerScript = GetComponentInParent<PlayerControl>();
+        deathZone = GameObject.Find("Death Zone").GetComponent<BoxCollider2D>();
     }
 
 
@@ -26,8 +30,12 @@ public class GroundSensor : MonoBehaviour
             _playerScript.Bounce();
             Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
             _enemyScript.TakeDamage();
+        }
 
-            
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            StartCoroutine(_playerScript.MarioDeath());
+            _playerScript.Bounce();
         }
     }
 
@@ -37,8 +45,6 @@ public class GroundSensor : MonoBehaviour
         {
             isGrounded = true;
         }
-
-        
     }
 
     void OnTriggerExit2D(Collider2D collision)

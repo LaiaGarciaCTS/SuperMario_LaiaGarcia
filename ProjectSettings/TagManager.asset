@@ -8,6 +8,7 @@ TagManager:
   - Moneda
   - Agujero
   - Win
+  - DeathZone
   layers:
   - Default
   - TransparentFX
