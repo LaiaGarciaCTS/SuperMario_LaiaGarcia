@@ -148,5 +148,10 @@ public class PlayerControl : MonoBehaviour
         _gameManager.GameOver();
     }
 
+
+
+
+
+
     
 }

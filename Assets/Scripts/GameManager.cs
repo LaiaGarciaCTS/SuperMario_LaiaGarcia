@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public SceneLoader _sceneLoader;
     public string gameOverScene;
 
+    public Button botonWinCanvas;
+
     void Awake()
     {
         _sceneLoader = GameObject.Find("Scene Loader").GetComponent<SceneLoader>();
@@ -46,6 +48,14 @@ public class GameManager : MonoBehaviour
         }
 
         pauseCanvas.SetActive(_pause);
+    }
+
+    public void Win()
+    {
+        if 
+        {
+
+        }
     }
 
 
