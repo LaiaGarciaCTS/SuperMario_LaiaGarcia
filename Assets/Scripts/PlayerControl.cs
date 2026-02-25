@@ -141,7 +141,7 @@ public class PlayerControl : MonoBehaviour
         _bgmManagerScript.StopBGM();
         animator.SetBool("IsDeath", true);
         _audioSourceSalto.PlayOneShot(deathSFXMario);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         Destroy(gameObject);
         

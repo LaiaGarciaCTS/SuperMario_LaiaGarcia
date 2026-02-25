@@ -6,11 +6,13 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public Text goombaText;
+    public Text monedaText;
 
     public bool _pause = false;
     public bool win = false;
 
     public int killedEnemies = 0;
+    public int coinCount = 0;
 
     public GameObject pauseCanvas;
     public GameObject WinCanvas;
@@ -36,6 +38,12 @@ public class GameManager : MonoBehaviour
         goombaText.text = killedEnemies.ToString();
     }
 
+    public void CoinCounter()
+    {
+        coinCount++;
+        monedaText.text = coinCount.ToString();
+    }
+
 
     public void Pause()
     {
@@ -55,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Win()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0f);
         if (win == false)
         {
             win = true;
@@ -65,7 +73,7 @@ public class GameManager : MonoBehaviour
             win = false;
         }
 
-        pauseCanvas.SetActive(win);
+        WinCanvas.SetActive(win);
     }
 
 

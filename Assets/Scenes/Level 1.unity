@@ -8887,7 +8887,7 @@ Transform:
   m_GameObject: {fileID: 228533009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 194.1, y: 2.65, z: 0}
+  m_LocalPosition: {x: 4, y: 2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8979,7 +8979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57c773374571db4a8c7156261570530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 194.1, y: 2.5, z: 0}
+  startPosition: {x: 4, y: 2.5, z: 0}
   movementSpeed: 5
   direction: 5
   bounceForce: 10
@@ -9136,9 +9136,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goombaText: {fileID: 1471605642}
+  monedaText: {fileID: 1284988185}
   _pause: 0
   win: 0
   killedEnemies: 0
+  coinCount: 0
   pauseCanvas: {fileID: 113867422}
   WinCanvas: {fileID: 510743003}
   _sceneLoader: {fileID: 2139456802}
@@ -13747,6 +13749,82 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &371711227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371711228}
+  - component: {fileID: 371711230}
+  - component: {fileID: 371711229}
+  m_Layer: 5
+  m_Name: Moneda1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &371711228
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371711227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1284988184}
+  m_Father: {fileID: 1897245307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -629, y: -129}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &371711229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371711227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -192747638961780876, guid: 1a171f186b3f4b441a5505862f66340c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &371711230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371711227}
+  m_CullTransparentMesh: 1
 --- !u!1 &377125683
 GameObject:
   m_ObjectHideFlags: 0
@@ -14069,6 +14147,7 @@ MonoBehaviour:
   monedaAnimator: {fileID: 0}
   rigidbodyMoneda: {fileID: 0}
   monedaSonido: {fileID: 8300000, guid: 818cf14c39e366d4f8b42cbfddb06738, type: 3}
+  _gameManager: {fileID: 0}
 --- !u!212 &377450383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22886,7 +22965,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.8280034, y: 0.28074026}
+  m_Size: {x: 0.67, y: 0.28074026}
   m_EdgeRadius: 0
 --- !u!114 &680431662
 MonoBehaviour:
@@ -29810,11 +29889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.987793
+      value: 43.49
       objectReference: {fileID: 0}
     - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1739616
+      value: 3.53
       objectReference: {fileID: 0}
     - target: {fileID: 6207541450851785736, guid: 43607215b60296a45aae7538150124db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34661,7 +34740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1050896939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40206,6 +40285,7 @@ MonoBehaviour:
   monedaAnimator: {fileID: 0}
   rigidbodyMoneda: {fileID: 0}
   monedaSonido: {fileID: 8300000, guid: 818cf14c39e366d4f8b42cbfddb06738, type: 3}
+  _gameManager: {fileID: 0}
 --- !u!212 &1215481882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41925,6 +42005,7 @@ MonoBehaviour:
   monedaAnimator: {fileID: 0}
   rigidbodyMoneda: {fileID: 0}
   monedaSonido: {fileID: 8300000, guid: 818cf14c39e366d4f8b42cbfddb06738, type: 3}
+  _gameManager: {fileID: 0}
 --- !u!212 &1249144690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43665,6 +43746,85 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1284988183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284988184}
+  - component: {fileID: 1284988186}
+  - component: {fileID: 1284988185}
+  m_Layer: 5
+  m_Name: Moneda Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1284988184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284988183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 371711228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 150.9, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1284988185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284988183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 98ee0b097b5a4e248be42c3ffc817fd2, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1284988186
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284988183}
+  m_CullTransparentMesh: 1
 --- !u!1 &1286383880
 GameObject:
   m_ObjectHideFlags: 0
@@ -55046,6 +55206,7 @@ MonoBehaviour:
   monedaAnimator: {fileID: 0}
   rigidbodyMoneda: {fileID: 0}
   monedaSonido: {fileID: 8300000, guid: 818cf14c39e366d4f8b42cbfddb06738, type: 3}
+  _gameManager: {fileID: 0}
 --- !u!95 &1567623906
 Animator:
   serializedVersion: 7
@@ -67897,6 +68058,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 809970802}
+  - {fileID: 371711228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -74399,7 +74561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7803588, b: 0, a: 0.39215687}
+  m_Color: {r: 0.7924528, g: 0.34901962, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -78890,6 +79052,10 @@ PrefabInstance:
       propertyPath: deathSFX
       value: 
       objectReference: {fileID: 8300000, guid: 034e86fc0bb148f4b8e7135077b1db91, type: 3}
+    - target: {fileID: 1308211278954406261, guid: 43607215b60296a45aae7538150124db, type: 3}
+      propertyPath: _goombaHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1491980523921784488, guid: 43607215b60296a45aae7538150124db, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

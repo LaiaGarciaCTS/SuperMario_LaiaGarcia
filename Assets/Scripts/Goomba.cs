@@ -17,7 +17,7 @@ public class Goomba : MonoBehaviour
     private AudioSource _audioSource;
     private BoxCollider2D _boxCollider;
     private GameManager _gameManager;
-    private int _goombaHealth = 3;
+    public int _goombaHealth = 3;
     private Slider _healthSlider;
 
     public AudioClip deathSFX;
@@ -117,7 +117,6 @@ public class Goomba : MonoBehaviour
         
 
         Destroy(gameObject, 1.2f);
-    _gameManager.GameOver();
 
     //_audioSource.clip = deathSFX
     //_audioSource.Play();
