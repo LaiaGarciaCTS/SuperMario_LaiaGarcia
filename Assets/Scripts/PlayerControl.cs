@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     public float bounceForce = 4;
     private GameManager _gameManager;
     private BGMManager _bgmManagerScript;
-    private BoxCollider2D _boxCollider; 
+    private BoxCollider2D _boxCollider;
     private AudioClip deathSFXMario;
 
     public Rigidbody2D rBody2D;
