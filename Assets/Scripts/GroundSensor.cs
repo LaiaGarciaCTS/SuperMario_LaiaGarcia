@@ -31,7 +31,7 @@ public class GroundSensor : MonoBehaviour
             //Destroy(collision.gameObject);
             _playerScript.Bounce();
             Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
-            _enemyScript.TakeDamage(jumpAtackDamage);
+            _enemyScript.TakeDamage(jumpAtackDamage, Vector3.zero, 0);
         }
 
         if (collision.gameObject.CompareTag("DeathZone"))

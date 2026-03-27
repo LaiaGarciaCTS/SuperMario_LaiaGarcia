@@ -3,24 +3,14 @@ using UnityEngine;
 public class AtackHitBox : MonoBehaviour
 {
     public int attackDamage = 3;
+    public int attackImpactForce = 30;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.layer ==7)
         {
             Goomba enemyScript = collider.gameObject.GetComponent<Goomba>();
-            enemyScript.TakeDamage(attackDamage);
+            enemyScript.TakeDamage(attackDamage, transform.right, attackImpactForce);
         }
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

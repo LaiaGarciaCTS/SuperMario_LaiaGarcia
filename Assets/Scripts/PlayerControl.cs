@@ -125,7 +125,7 @@ public class PlayerControl : MonoBehaviour
             _audioSourceSalto.PlayOneShot(saltoSonido);
         }
 
-        if(_attackAction.WasPressedThisFrame())
+        if(_attackAction.WasPressedThisFrame() && _canShoot)
         {
             Shoot();
             //Attack();
@@ -177,7 +177,8 @@ public class PlayerControl : MonoBehaviour
             _audioSourceSalto.PlayOneShot(win);
         }
 
-        if(collider.gameObject.CompareTag("PowerUp"))
+
+        if(collision.gameObject.CompareTag("PowerUp"))
         {
             _powerUpTimer = 0;
             _canShoot = true;
