@@ -46,8 +46,6 @@ public class PlayerControl : MonoBehaviour
 
     
     
-
-
     void Awake()
     {
         rBody2D = GetComponent<Rigidbody2D>();
@@ -136,9 +134,9 @@ public class PlayerControl : MonoBehaviour
 
         if(_canShoot)
         {
-            ShotPowerUp();
+            ShootPowerUp();
         }
-        
+
         animator.SetBool("IsJumping", !sensor.isGrounded);
         }
 
@@ -177,6 +175,12 @@ public class PlayerControl : MonoBehaviour
         {
             _bgmManagerScript.Win();
             _audioSourceSalto.PlayOneShot(win);
+        }
+
+        if(collider.gameObject.CompareTag("PowerUp"))
+        {
+            _powerUpTimer = 0;
+            _canShoot = true;
         }
     }
 
