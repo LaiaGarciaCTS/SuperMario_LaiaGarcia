@@ -8892,6 +8892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 680431660}
+  - {fileID: 1618127817}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &228533014
@@ -8984,9 +8985,11 @@ MonoBehaviour:
   direction: 5
   bounceForce: 10
   rBody2D: {fileID: 228533014}
+  bulletPrefab: {fileID: 4757304247899508935, guid: 27aae4ab9e3ec1c4da687f72915a6391, type: 3}
+  bulletSpawn: {fileID: 1618127817}
   saltoSonido: {fileID: 8300000, guid: fd5c68504f34f99439bbf5c0152799fb, type: 3}
   win: {fileID: 8300000, guid: 9d4a5ad7ed2b38a43a6607df50fd4108, type: 3}
-  jumpForce: 10
+  jumpForce: 15
 --- !u!95 &228533017
 Animator:
   serializedVersion: 7
@@ -22980,6 +22983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathZone: {fileID: 0}
+  jumpAtackDamage: 3
   isGrounded: 0
 --- !u!1 &682103815
 GameObject:
@@ -57328,6 +57332,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1618127816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618127817}
+  m_Layer: 0
+  m_Name: Bullet Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618127817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618127816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.519, y: 0.242, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 228533013}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1622526990
 GameObject:
   m_ObjectHideFlags: 0

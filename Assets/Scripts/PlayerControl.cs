@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public float movementSpeed = 5;
     public int direction = 5;
 
+    private InputAction _attackAction;
     private InputAction moveAction;
     private Vector2 moveDirection;
     private InputAction jumpAction;
@@ -23,6 +24,9 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer renderer;
     private GroundSensor sensor;
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
     private Animator animator;
 
     private AudioSource _audioSourceSalto;
@@ -30,7 +34,18 @@ public class PlayerControl : MonoBehaviour
 
     public AudioClip win;
     
-    public float jumpForce = 10;
+    public float jumpForce = 15;
+
+
+    public GameObject attackHitBox;
+
+    bool _canShoot = false;
+
+    float _powerUpDuration = 10;
+    float _powerUpTimer;
+
+    
+    
 
 
     void Awake()
@@ -50,7 +65,9 @@ public class PlayerControl : MonoBehaviour
         moveAction = InputSystem.actions["Move"];
         jumpAction = InputSystem.actions["Jump"];
         _pauseAction = InputSystem.actions["Pause"];
+        _attackAction = InputSystem.actions["Attack"];
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,12 +105,14 @@ public class PlayerControl : MonoBehaviour
     //Cómo hacer flip al moverse y hacer la animación de correr
         if(moveDirection.x > 0)
         {
-            renderer.flipX = false;
+            //renderer.flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             animator.SetBool("IsRunning", true);
         }
         else if(moveDirection.x < 0)
         {
-            renderer.flipX = true;
+            //renderer.flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             animator.SetBool("IsRunning", true);
         }
         else
@@ -107,14 +126,35 @@ public class PlayerControl : MonoBehaviour
             rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             _audioSourceSalto.PlayOneShot(saltoSonido);
         }
-        
-        
 
+        if(_attackAction.WasPressedThisFrame())
+        {
+            Shoot();
+            //Attack();
+            //animator.SetTrigger("Attack");
+        }
+
+        if(_canShoot)
+        {
+            ShotPowerUp();
+        }
+        
         animator.SetBool("IsJumping", !sensor.isGrounded);
+        }
+
+        void ShootPowerUp()
+        {
+            _powerUpTimer += Time.deltaTime;
+
+            if(_powerUpTimer >= _powerUpDuration)
+            {
+                _canShoot = false;
+            }
+        }
        
     //cómo eliminar la fricción.
        
-    }
+    
     void FixedUpdate()
        {
             rBody2D.linearVelocity = new Vector2(moveDirection.x * movementSpeed, rBody2D.linearVelocity.y);
@@ -126,12 +166,29 @@ public class PlayerControl : MonoBehaviour
         rBody2D.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
     }
 
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Win")
         {
             _bgmManagerScript.Win();
             _audioSourceSalto.PlayOneShot(win);
+        }
+    }
+
+    void Attack()
+    {
+        if(attackHitBox.activeInHierarchy)
+        {
+            attackHitBox.SetActive(false);
+        }
+        else
+        {
+            attackHitBox.SetActive(true);
         }
     }
 

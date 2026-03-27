@@ -8,6 +8,8 @@ public class GroundSensor : MonoBehaviour
 
     public BoxCollider2D deathZone;
 
+    public int jumpAtackDamage = 3;
+
     void Awake()
     {
         _playerScript = GetComponentInParent<PlayerControl>();
@@ -29,7 +31,7 @@ public class GroundSensor : MonoBehaviour
             //Destroy(collision.gameObject);
             _playerScript.Bounce();
             Goomba _enemyScript = collision.gameObject.GetComponent<Goomba>();
-            _enemyScript.TakeDamage();
+            _enemyScript.TakeDamage(jumpAtackDamage);
         }
 
         if (collision.gameObject.CompareTag("DeathZone"))
